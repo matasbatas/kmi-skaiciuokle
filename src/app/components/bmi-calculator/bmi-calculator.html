@@ -1,0 +1,48 @@
+<div class="calculator">
+
+  <h1>KMI skaičiuoklė</h1>
+
+  <form (ngSubmit)="calculateBmi()">
+
+    <div class="form-group">
+      <label for="weight">Svoris (kg)</label>
+
+      <input
+        id="weight"
+        type="number"
+        name="weight"
+        [(ngModel)]="weight"
+        min="1"
+        required
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="height">Ūgis (cm)</label>
+
+      <input
+        id="height"
+        type="number"
+        name="height"
+        [(ngModel)]="height"
+        min="1"
+        required
+      >
+    </div>
+
+    <button type="submit">
+      Apskaičiuoti KMI
+    </button>
+
+  </form>
+
+  <div class="result" *ngIf="bmi !== null">
+    <h2>Rezultatas</h2>
+
+    <p>
+      Jūsų KMI:
+      <strong>{{ bmi | number:'1.2-2' }}</strong>
+    </p>
+  </div>
+
+</div>

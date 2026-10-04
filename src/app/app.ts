@@ -1,11 +1,12 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
+import { BmiCalculator } from './components/bmi-calculator/bmi-calculator';
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  imports: [BmiCalculator],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('kmi-skaiciuokle');
+
 }
